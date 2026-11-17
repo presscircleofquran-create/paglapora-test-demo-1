@@ -1,0 +1,62 @@
+/* হোমের ডান কার্ড */
+.ln-rc{display:none}
+.rc-cd{border:2px solid var(--line);border-radius:1.1rem;padding:1.1rem 1.2rem;background:var(--bg)}
+.rc-hd{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin-bottom:.9rem}
+.rc-hd h2{margin:0;font-size:1.25rem;font-weight:800;color:var(--text)}
+.rc-lk{padding:0;border:0;background:none;color:var(--blue);font:inherit;font-size:.9rem;font-weight:800;text-decoration:none;cursor:pointer;white-space:nowrap;text-transform:uppercase}
+.rc-lk:hover{text-decoration:underline}
+.rc-lg{display:flex;align-items:center;gap:1rem}
+.rc-sh{flex:none;width:3.6rem}.rc-sh svg{display:block;width:100%;height:auto}
+.rc-lg b,.rc-nx b{display:block;font-size:1.05rem;font-weight:800;color:var(--text);line-height:1.35}
+.rc-lg p{margin:.15rem 0 0;font-size:.95rem;font-weight:600;color:#7b8d97;line-height:1.4}
+.rc-wk{display:grid;grid-template-columns:repeat(7,1fr);gap:.2rem;padding:.2rem 0 .1rem}
+.rc-dy{display:grid;justify-items:center;gap:.5rem}
+.rc-dy span{font-size:.82rem;font-weight:800;color:#7b8d97;line-height:1}
+.rc-dy.tdy span{color:var(--blue)}
+.rc-dy i{display:grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--line)}
+.rc-dy i svg{width:1.3rem;height:1.3rem}
+.rc-dy i.ok{background:#1cb0f6;box-shadow:0 .18rem 0 #1899d6}.rc-dy i.no{background:#ff4b4b;box-shadow:0 .18rem 0 #d33131}
+.rc-nx{display:flex;align-items:center;gap:1rem}.rc-nx>div{flex:1;min-width:0}
+.rc-ch{flex:none;width:3.8rem}.rc-ch svg{display:block;width:100%;height:auto}
+.rc-bar{position:relative;height:1.35rem;margin-top:.7rem;border-radius:.7rem;background:var(--line);overflow:hidden}
+.rc-bar i{position:absolute;left:0;top:0;bottom:0;border-radius:.7rem;background:var(--blue)}
+.rc-bar span{position:absolute;inset:0;display:grid;place-items:center;font-size:.8rem;font-weight:800;color:var(--text);mix-blend-mode:normal}
+.rc-tx{margin:0;font-size:1rem;font-weight:700;color:#7b8d97}
+@media (min-width:80em){
+  .ln-rc{display:grid;gap:1.1rem;align-content:start;position:absolute;z-index:3;top:5.2rem;width:410px;right:calc((100% - 17.2rem - 1108px)/2);max-height:calc(100% - 6rem);overflow-y:auto;scrollbar-width:none}
+  .ln-rc::-webkit-scrollbar{display:none}
+}
+/* ক্যালেন্ডার */
+#cl-ov{position:fixed;inset:0;z-index:480;display:grid;place-items:center;background:rgba(0,0,0,.55);padding:1rem}
+.cl-sh{width:min(26rem,100%);max-height:94vh;overflow:auto;background:var(--bg);border:2px solid var(--line);border-radius:1.2rem;padding:1.2rem;box-sizing:border-box;animation:spin .16s ease-out}
+.cl-hd h3{margin:0 0 .8rem;font-size:1.5rem;font-weight:800;color:var(--text)}
+.cl-bx{border:2px solid var(--line);border-radius:1rem;padding:.8rem .6rem 1rem}
+.cl-mn{display:flex;align-items:center;justify-content:space-between;padding:0 .4rem .6rem}
+.cl-mn b{font-size:1.05rem;font-weight:800;color:var(--text)}
+.cl-mn button{width:2rem;height:2rem;border:0;background:none;color:#7b8d97;font-size:1.8rem;line-height:1;cursor:pointer;font-family:inherit}
+.cl-wd,.cl-gd{display:grid;grid-template-columns:repeat(7,1fr)}
+.cl-wd span{text-align:center;font-size:.85rem;font-weight:800;color:#7b8d97;padding:.3rem 0 .5rem}
+.cl-gd span{position:relative;display:grid;place-items:center;height:2.6rem}
+.cl-gd .cl b{position:relative;z-index:1;display:grid;place-items:center;width:2.1rem;height:2.1rem;border-radius:50%;font-size:.95rem;font-weight:800;color:#afafaf}
+.cl-gd .cl.td b{background:var(--line);color:var(--text)}
+.cl-gd .cl.pl b{background:#1cb0f6;color:#fff;box-shadow:0 .16rem 0 #1899d6}
+.cl-gd .cl.bd::before{content:"";position:absolute;top:.35rem;bottom:.35rem;left:0;right:0;background:color-mix(in srgb,#ffc800 18%,transparent)}
+.cl-gd .cl.bd:not(.pv)::before{left:50%}.cl-gd .cl.bd:not(.nx)::before{right:50%}
+/* গাইডবই পেইজ */
+.ln-scroll.gd{padding:0}
+.gd-wrap{max-width:46rem;margin:0 auto;padding:1.2rem 1.2rem 6rem}
+.gd-bk{display:flex;align-items:center;gap:.6rem;width:100%;padding:0 0 1rem;border:0;border-bottom:2px solid var(--line);background:none;color:#7b8d97;font:inherit;font-size:1.2rem;font-weight:800;cursor:pointer;text-align:left}
+.gd-bk svg{width:1.5rem;height:1.5rem}
+.gd-hd{padding:1.4rem 0 1rem}
+.gd-tg{font-size:1rem;font-weight:800;color:var(--blue)}
+.gd-hd h1{margin:.2rem 0 0;font-size:1.9rem;font-weight:800;color:var(--text);line-height:1.25}
+.gd-sc{margin:1rem 0;border:2px solid var(--line);border-radius:1.1rem;padding:1.1rem 1.3rem}
+.gd-sc h2{margin:0 0 .6rem;font-size:1.2rem;font-weight:800;color:var(--text)}
+.gd-sc p{margin:.4rem 0;font-size:1.1rem;line-height:1.7;color:var(--soft)}
+@media (min-width:80em){.ln-scroll.gd{padding-right:28.8rem;left:17.2rem}.gd-wrap{padding-top:2rem}}
+/* বোতাম চাপলে আসা রঙিন বক্স */
+.ln-pop.go{background:var(--pc);border-color:var(--pc);color:#fff}
+.ln-pop.go i{background:var(--pc);border-color:var(--pc)}
+.ln-pop.go b{color:#fff}.ln-pop.go p{color:rgba(255,255,255,.92);font-weight:700}
+.ln-pop .pb.go{width:100%;border:0;background:#fff;color:var(--pc);cursor:pointer;font:inherit;font-weight:800;text-transform:uppercase;box-shadow:0 .28rem 0 color-mix(in srgb,var(--pc) 28%,#fff)}
+.ln-pop .pb.go:active{transform:translateY(.2rem);box-shadow:0 .08rem 0 color-mix(in srgb,var(--pc) 28%,#fff)}

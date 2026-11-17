@@ -1,0 +1,12 @@
+/* মাউস রাখলে ৩ডি বাটন ভেতরে ঢুকে যায়: উপরের অংশ নিচে নামে, নিচের গাঢ় কিনারা একই জায়গায় থাকে */
+@media (hover:hover){
+  .btn-primary:hover:not(:disabled){transform:translateY(var(--shade));box-shadow:0 0 0 var(--blue-d);filter:none}
+  .btn-outline:hover{transform:translateY(var(--shade2));box-shadow:0 0 0 var(--line)}
+  .opt:hover{transform:translateY(2px);border-bottom-width:2px;padding-bottom:.8rem}
+  .opt.card:hover{padding-bottom:1rem}
+  .pr-card:hover:not(:disabled),.pr-opt:hover:not(:disabled),.pr-mb:hover:not(:disabled){transform:translateY(2px);box-shadow:0 0 0 var(--line)}
+  .pr-chip:hover{transform:translateY(2px);box-shadow:none}
+  .pr-go:hover,.pr-foot.bad .pr-go:hover,.pr-foot.ok .pr-go:hover{transform:translateY(var(--shade));box-shadow:none;filter:none}
+  .ln-up.on:hover{transform:translateY(2px);box-shadow:0 1px 0 var(--line)}
+  @container (min-width:601px){.ln-gd:hover{transform:translateY(2px);box-shadow:0 1px 0 var(--d)}}
+}

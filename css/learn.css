@@ -1,0 +1,313 @@
+/* হোম পাতা (নতুন, সরল) — ডার্ক */
+.view.ln{animation:none;position:fixed;inset:0;z-index:2;background:var(--bg);color:var(--text);overflow:hidden}
+.view.ln[hidden]{display:none}
+.ln svg{display:block}
+.ln-scroll{height:100%;overflow-y:auto;overscroll-behavior:contain;padding:0 1rem}
+.ln-wrap{max-width:34rem;margin:0 auto}
+.ln-uw{--g:#fff}
+.ln-uw{position:sticky;top:0;z-index:5;padding:1rem 0 .8rem;background:var(--bg)}
+.ln-unit{display:flex;align-items:stretch;min-height:5.4rem;border-radius:1.1rem;background:var(--c);box-shadow:0 .35rem 0 var(--d);color:#fff;overflow:hidden;transition:background .25s}
+.ln-ub{flex:1;min-width:0;align-self:center;padding:.8rem 1rem .8rem 1.3rem;font-size:1.45rem;line-height:1.3;font-weight:700}
+.ln-gd{flex:none;display:flex;align-items:center;justify-content:center;gap:.7rem;min-width:4.6rem;padding:0 1rem;border:0;border-left:2px solid var(--d);background:none;color:#fff;font:inherit;font-weight:700;font-size:1.05rem;cursor:pointer}
+.ln-gd:active{background:rgba(0,0,0,.08)}
+.ln-gd svg{width:1.9rem;height:1.9rem}
+.ln-gd span{display:none}
+.ln-path{display:flex;flex-direction:column;align-items:center;padding:3.6rem 0 4rem}
+.ln-sep{height:0}
+.ln-r{position:relative;margin:.6rem 0;transform:translateX(var(--x));display:flex;justify-content:center}
+.ln-r:has(.ln-bub.st){margin-top:3.4rem}
+.ln-nd{position:relative;width:4.4rem;height:4.07rem;margin:.1rem 0;padding:0;border:0;border-radius:0;background:none;overflow:visible;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.ln-nd.cur{width:5rem;height:4.63rem}
+.ln-nd.jump{width:3.6rem;height:3.33rem}
+.ln-nd.lock{cursor:default}
+.ln-nd svg{width:100%;height:100%;overflow:visible}
+.ln-nd:not(.lock):active svg{transform:translateY(.22rem)}
+.ln-bub{position:absolute;left:50%;bottom:calc(100% + .5rem);transform:translateX(-50%);padding:.55rem 1rem;border:2px solid var(--line);border-radius:.9rem;background:var(--bg);color:var(--blue);font-weight:700;font-size:1.05rem;white-space:nowrap;animation:lnbob 1.3s ease-in-out infinite;z-index:2}
+.ln-bub::after{content:"";position:absolute;left:50%;bottom:-.5rem;width:.8rem;height:.8rem;background:var(--bg);border:solid var(--line);border-width:0 2px 2px 0;transform:translateX(-50%) rotate(45deg)}
+.ln-bub.jp{position:static;transform:none;color:var(--purple);margin:2.2rem 0 .9rem;animation:none}
+.ln-jump{display:flex;flex-direction:column;align-items:center;margin-bottom:.8rem}
+@keyframes lnbob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-.4rem)}}
+@media (min-width:44em){.ln-gd{padding:0 1.1rem}.ln-gd span{display:inline}.ln-ub{font-size:1.6rem}}
+html[data-rtl] .ln-ub{direction:rtl;unicode-bidi:isolate}
+
+/* বোতাম ও বাবল ৫০% বড় */
+.ln-nd,.ln-nd.cur{width:6.6rem;height:6.1rem}
+.ln-r{margin:.8rem 0;height:6.1rem}
+.ln-r:has(.ln-bub.st){margin-top:.8rem}
+.ln-bub{bottom:calc(100% + .25rem);padding:.8rem 1.5rem;border-radius:1.3rem;font-size:1.575rem}
+.ln-bub::after{bottom:-.6rem;width:1.1rem;height:1.1rem}
+@keyframes lnbob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-.3rem)}}
+.ln-nd svg{transition:transform .12s ease-out}
+@media (hover:hover){.ln-nd:not(.lock):hover svg{transform:translateY(.28rem)}}
+.ln-nd:not(.lock):active svg{transform:translateY(.4rem)}
+.ln-path{padding:4.6rem 0 5rem}
+
+.ln-bub{bottom:calc(100% - .35rem);z-index:3}
+.ln-bub::after{bottom:-.55rem}
+.ln-uw{padding-bottom:.4rem}
+
+/* স্পর্শ ও অ্যানিমেশন */
+.ln-nd svg{transition:none}
+.ln-nd:not(.lock):active svg,.ln-nd:not(.lock):hover svg{transform:none}
+.ln-nd .tp{transition:transform .1s ease-out}
+@media (hover:hover){.ln-nd:not(.lock):hover .tp{transform:translateY(3.5px)}}
+.ln-nd:not(.lock):active .tp{transform:translateY(5px)}
+.ln-bub{bottom:calc(100% + 1.45rem)}
+.ln-nd.lock{cursor:pointer}
+.stj,.stsh{animation:stj 5.2s infinite}
+.stsh{animation-name:stsh}
+@keyframes stj{
+0%{transform:translateY(0) rotate(0);animation-timing-function:ease-out}6.9%{transform:translateY(-9px) rotate(45deg);animation-timing-function:ease-in}13.75%,25%{transform:translateY(0) rotate(90deg);animation-timing-function:ease-out}
+31.9%{transform:translateY(-9px) rotate(135deg);animation-timing-function:ease-in}38.75%,50%{transform:translateY(0) rotate(180deg);animation-timing-function:ease-out}
+56.9%{transform:translateY(-9px) rotate(225deg);animation-timing-function:ease-in}63.75%,75%{transform:translateY(0) rotate(270deg);animation-timing-function:ease-out}
+81.9%{transform:translateY(-9px) rotate(315deg);animation-timing-function:ease-in}88.75%,100%{transform:translateY(0) rotate(360deg)}}
+@keyframes stsh{
+0%{transform:scale(1) rotate(0);opacity:1;animation-timing-function:ease-out}6.9%{transform:scale(.62) rotate(45deg);opacity:.5;animation-timing-function:ease-in}13.75%,25%{transform:scale(1) rotate(90deg);opacity:1;animation-timing-function:ease-out}
+31.9%{transform:scale(.62) rotate(135deg);opacity:.5;animation-timing-function:ease-in}38.75%,50%{transform:scale(1) rotate(180deg);opacity:1;animation-timing-function:ease-out}
+56.9%{transform:scale(.62) rotate(225deg);opacity:.5;animation-timing-function:ease-in}63.75%,75%{transform:scale(1) rotate(270deg);opacity:1;animation-timing-function:ease-out}
+81.9%{transform:scale(.62) rotate(315deg);opacity:.5;animation-timing-function:ease-in}88.75%,100%{transform:scale(1) rotate(360deg);opacity:1}}
+/* লক বার্তা */
+.ln-r.pp{z-index:30}
+.ln-pop{position:absolute;top:calc(100% - .4rem);left:50%;transform:translateX(calc(-50% - var(--x)));width:calc(min(100vw,34rem) - 3rem);box-sizing:border-box;padding:1.4rem 1.5rem 1.5rem;background:var(--field);border:2px solid var(--line);border-radius:1.5rem;text-align:left;z-index:31;animation:lnpop .18s ease-out}
+.ln-pop i{position:absolute;top:-.65rem;left:calc(50% + var(--x));width:1.1rem;height:1.1rem;background:var(--field);border:solid var(--line);border-width:2px 0 0 2px;transform:translateX(-50%) rotate(45deg)}
+.ln-pop b{display:block;font-size:1.5rem;color:var(--text);margin-bottom:.4rem}
+.ln-pop p{margin:0 0 1.2rem;font-size:1.3rem;line-height:1.4;color:#8fa3ad}
+.ln-pop .pb{padding:1rem;border-radius:1.1rem;background:var(--line);color:var(--muted);text-align:center;font-weight:700;font-size:1.3rem}
+@keyframes lnpop{from{opacity:0}to{opacity:1}}
+
+/* ধাপ ৪৮: রেফারেন্স অনুযায়ী মাপ */
+.ln-nd,.ln-nd.cur{width:6.6rem;height:6.6rem}
+.ln-r{margin:1rem 0;height:6.6rem}
+.ln-r:has(.ln-bub.st){margin-top:1rem}
+.ln-bub{bottom:calc(100% + 1.1rem);border-width:3px}
+.ln-bub::after{width:1.5rem;height:1.5rem;bottom:-.78rem;border-width:0 3px 3px 0}
+.ln-nd:not(.lock):hover .stj,.ln-nd:not(.lock):hover .stsh,.ln-nd:not(.lock):active .stj,.ln-nd:not(.lock):active .stsh{animation:none}
+@keyframes stj{
+0%{transform:translateY(0) rotate(0) scale(1);animation-timing-function:ease-out}6.9%{transform:translateY(-10px) rotate(45deg) scale(1.1);animation-timing-function:ease-in}13.75%,25%{transform:translateY(0) rotate(90deg) scale(1);animation-timing-function:ease-out}
+31.9%{transform:translateY(-10px) rotate(135deg) scale(1.1);animation-timing-function:ease-in}38.75%,50%{transform:translateY(0) rotate(180deg) scale(1);animation-timing-function:ease-out}
+56.9%{transform:translateY(-10px) rotate(225deg) scale(1.1);animation-timing-function:ease-in}63.75%,75%{transform:translateY(0) rotate(270deg) scale(1);animation-timing-function:ease-out}
+81.9%{transform:translateY(-10px) rotate(315deg) scale(1.1);animation-timing-function:ease-in}88.75%,100%{transform:translateY(0) rotate(360deg) scale(1)}}
+@keyframes stsh{
+0%{transform:scale(1) rotate(0);opacity:0;animation-timing-function:ease-out}6.9%{transform:scale(.6) rotate(45deg);opacity:.5;animation-timing-function:ease-in}13.75%,25%{transform:scale(1) rotate(90deg);opacity:0;animation-timing-function:ease-out}
+31.9%{transform:scale(.6) rotate(135deg);opacity:.5;animation-timing-function:ease-in}38.75%,50%{transform:scale(1) rotate(180deg);opacity:0;animation-timing-function:ease-out}
+56.9%{transform:scale(.6) rotate(225deg);opacity:.5;animation-timing-function:ease-in}63.75%,75%{transform:scale(1) rotate(270deg);opacity:0;animation-timing-function:ease-out}
+81.9%{transform:scale(.6) rotate(315deg);opacity:.5;animation-timing-function:ease-in}88.75%,100%{transform:scale(1) rotate(360deg);opacity:0}}
+.stsh{opacity:0}
+
+/* ধাপ ৪৯: রেফারেন্স ছবির অনুপাত (u = বারের প্রস্থ / ৭৯৮) */
+.ln-scroll{padding:0}
+.ln-wrap{container-type:inline-size;max-width:42rem;--u:calc(100cqw / 798)}
+.ln-uw{z-index:60;padding:calc(19*var(--u)) calc(29*var(--u)) calc(8*var(--u))}
+.ln-unit{min-height:0;height:calc(113*var(--u));border-radius:calc(26*var(--u));box-shadow:0 calc(7*var(--u)) 0 var(--d)}
+.ln-ub{font-size:max(1.15rem,calc(31*var(--u)));padding:0 calc(30*var(--u));line-height:1.2}
+.ln-gd{min-width:calc(110*var(--u));padding:0 calc(26*var(--u))}
+.ln-gd svg{width:max(1.4rem,calc(36*var(--u)));height:max(1.4rem,calc(36*var(--u)))}
+.ln-path{padding:calc(18*var(--u)) 0 calc(80*var(--u))}
+.ln-path.f0{padding-top:calc(40*var(--u))}
+.ln-r{--x:calc(var(--k)*87*var(--u));transform:translateX(var(--x));margin:calc(4*var(--u)) 0;height:calc(87*var(--u))}
+.ln-r.cr,.ln-r:has(.ln-bub.st){margin-top:calc(24*var(--u));margin-bottom:calc(24*var(--u))}
+.ln-nd,.ln-nd.cur{width:calc(87*var(--u));height:calc(87*var(--u))}
+.ln-bub{bottom:calc(100% + var(--u));box-sizing:border-box;display:flex;align-items:center;justify-content:center;min-width:calc(141*var(--u));height:calc(55*var(--u));min-height:2.6rem;padding:0 max(.8rem,calc(16*var(--u)));border-radius:max(.9rem,calc(20*var(--u)));border-width:max(2px,calc(3*var(--u)));font-size:max(1.1rem,calc(25*var(--u)))}
+.ln-bub::after{width:max(.8rem,calc(15*var(--u)));height:max(.8rem,calc(15*var(--u)));bottom:calc(max(.8rem,calc(15*var(--u))) / -2 - 1px);border-width:0 max(2px,calc(3*var(--u))) max(2px,calc(3*var(--u))) 0}
+.ln-pop{top:calc(100% + 8*var(--u));width:min(max(calc(365*var(--u)),21rem),calc(100cqw - 2rem));padding:max(1rem,calc(21*var(--u)));border-radius:max(1.2rem,calc(25*var(--u)))}
+.ln-pop i{width:max(.9rem,calc(15*var(--u)));height:max(.9rem,calc(15*var(--u)));top:calc(max(.9rem,calc(15*var(--u))) / -2 - 1px)}
+.ln-pop b{font-size:max(1.15rem,calc(21*var(--u)))}
+.ln-pop p{font-size:max(1.05rem,calc(21*var(--u)));margin-bottom:max(.9rem,calc(18*var(--u)))}
+.ln-pop .pb{padding:0;height:max(2.8rem,calc(58*var(--u)));display:flex;align-items:center;justify-content:center;border-radius:max(1rem,calc(18*var(--u)));font-size:max(1.05rem,calc(21*var(--u)))}
+
+/* ধাপ ৫০: গল্প-বিভাজক, সরাসরি-এখানে বাটন, উপরে ওঠার বাটন */
+.ln-sep{width:calc(740*var(--u));display:flex;align-items:center;gap:calc(20*var(--u));margin-top:calc(46*var(--u));height:calc(34*var(--u));min-height:1.8rem}
+.ln-sep i{flex:1;height:2px;background:var(--line)}
+.ln-sep span{font-weight:700;font-size:max(1.1rem,calc(26*var(--u)));color:#52656d;text-align:center;max-width:70%}
+.ln-sep[data-u="0"]{display:none}
+.ln-r.af{margin-top:calc(34*var(--u))}
+.ln-r.af.cr,.ln-r.af:has(.ln-bub){margin-top:calc(134*var(--u))}
+.ln-nd.jmp{cursor:pointer}
+.ln-bub.jb{animation:lnbob 1.3s ease-in-out infinite}
+.ln-upw{position:sticky;bottom:0;height:0;z-index:40}
+.ln-up{position:absolute;right:calc(29*var(--u));bottom:calc(28*var(--u));width:max(2.8rem,calc(67*var(--u)));height:max(2.6rem,calc(62*var(--u)));display:flex;align-items:center;justify-content:center;border:2px solid var(--line);border-radius:max(.8rem,calc(14*var(--u)));background:var(--bg);color:var(--blue);cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s;box-shadow:0 3px 0 var(--line)}
+.ln-up.on{opacity:1;pointer-events:auto}
+.ln-up svg{width:55%;height:55%}
+.ln-up.dn svg{transform:rotate(180deg)}
+.ln-up:active{transform:translateY(2px);box-shadow:0 1px 0 var(--line)}
+
+/* ধাপ ৫১: ফোন ও ডেস্কটপ — দুই রেফারেন্স ছবির অনুপাত */
+.ln-uw,.ln-path,.ln-upw{--u:calc(100cqw / 798);--bm:29;--bar-h:113;--bar-pt:19;--bar-r:26;--bar-sh:7;--pb:8;--bt:87;--rm:4;--cm:24;--pp:18;--pf:40;--bw:141;--bh:55;--bf:25;--sw:740;--sh:34;--sf:26;--sm:40;--am:30;--ab:80}
+@container (max-width:600px){.ln-uw,.ln-path,.ln-upw{--u:calc(100cqw / 439);--bm:20;--bar-h:90;--bar-pt:14;--bar-r:20;--bar-sh:6;--pb:6;--bt:78;--rm:6;--cm:22;--pp:14;--pf:34;--bw:125;--bh:49;--bf:22;--sw:439;--sh:30;--sf:22;--sm:40;--am:26;--ab:74}}
+.ln-uw{padding:calc(var(--bar-pt)*var(--u)) calc(var(--bm)*var(--u)) calc(var(--pb)*var(--u))}
+.ln-unit{height:calc(var(--bar-h)*var(--u));border-radius:calc(var(--bar-r)*var(--u));box-shadow:0 calc(var(--bar-sh)*var(--u)) 0 var(--d)}
+.ln-ub{font-size:max(1.1rem,calc(var(--bar-h)*.27*var(--u)))}
+.ln-path{padding:calc(var(--pp)*var(--u)) 0 calc(80*var(--u))}
+.ln-path.f0{padding-top:calc(var(--pf)*var(--u))}
+.ln-r{--x:calc(var(--k)*var(--bt)*var(--u));margin:calc(var(--rm)*var(--u)) 0;height:calc(var(--bt)*.9375*var(--u))}
+.ln-r.cr,.ln-r:has(.ln-bub.st){margin-top:calc(var(--cm)*var(--u));margin-bottom:calc(var(--cm)*var(--u))}
+.ln-nd,.ln-nd.cur{width:calc(var(--bt)*var(--u));height:calc(var(--bt)*.9375*var(--u))}
+.ln-bub{min-width:calc(var(--bw)*var(--u));height:calc(var(--bh)*var(--u));font-size:max(1.05rem,calc(var(--bf)*var(--u)))}
+.ln-sep{width:calc(var(--sw)*var(--u));height:calc(var(--sh)*var(--u));margin-top:calc(var(--sm)*var(--u))}
+.ln-sep span{font-size:max(1.05rem,calc(var(--sf)*var(--u)))}
+.ln-r.af{margin-top:calc(var(--am)*var(--u))}
+.ln-r.af.cr,.ln-r.af:has(.ln-bub){margin-top:calc(var(--ab)*var(--u))}
+.ln-r.af:has(.ln-bub.jb){margin-bottom:calc(var(--rm)*var(--u))}
+.ln-up{right:calc(var(--bm)*var(--u))}
+.view.ln{padding:0}
+
+/* ধাপ ৫৪: সব বাটনের কেন্দ্র-থেকে-কেন্দ্র দূরত্ব সমান (বাঁকা পথেও) */
+.ln-uw,.ln-path,.ln-upw{--pp-add:0}
+.ln-path{padding-top:calc((var(--pp) + var(--rm))*var(--u))}
+.ln-path.f0{padding-top:calc((var(--pf) + var(--rm))*var(--u))}
+.ln-r{margin:0 0 calc(var(--rb,.1525)*var(--bt)*var(--u))}
+.ln-r.cr,.ln-r:has(.ln-bub.st){margin-top:calc((var(--cm) - var(--rm))*var(--u));margin-bottom:calc(var(--rb,.1525)*var(--bt)*var(--u) + (var(--cm) - var(--rm))*var(--u))}
+.ln-r.af{margin-top:calc(var(--am)*var(--u))}
+.ln-r.af.cr,.ln-r.af:has(.ln-bub){margin-top:calc(var(--ab)*var(--u))}
+.ln-r.af:has(.ln-bub.jb){margin-bottom:calc(var(--rb,.1525)*var(--bt)*var(--u))}
+/* ধাপ ৫৫: প্রতি লাফে ১টি পূর্ণ ঘূর্ণি — যেকোনো প্রতীক নামার পর সোজা অবস্থায় ফেরে */
+.stj,.stsh{animation-duration:1.3s}
+@keyframes stj{0%{transform:translateY(0) rotate(0) scale(1);animation-timing-function:ease-out}27%{transform:translateY(-10px) rotate(180deg) scale(1.1);animation-timing-function:ease-in}55%,100%{transform:translateY(0) rotate(360deg) scale(1)}}
+@keyframes stsh{0%{transform:scale(1) rotate(0);opacity:0;animation-timing-function:ease-out}27%{transform:scale(.6) rotate(180deg);opacity:.5;animation-timing-function:ease-in}55%,100%{transform:scale(1) rotate(360deg);opacity:0}}
+
+/* ধাপ ৫৬: তারা ফেরত (৯০° ঘূর্ণি), গাইড বার, নেভিগেশন */
+.stj,.stsh{animation-duration:7.6s}
+@keyframes stj{
+0%{transform:translateY(0) rotate(0) scale(1);animation-timing-function:ease-out}6.9%{transform:translateY(-10px) rotate(45deg) scale(1.1);animation-timing-function:ease-in}13.75%,25%{transform:translateY(0) rotate(90deg) scale(1);animation-timing-function:ease-out}
+31.9%{transform:translateY(-10px) rotate(135deg) scale(1.1);animation-timing-function:ease-in}38.75%,50%{transform:translateY(0) rotate(180deg) scale(1);animation-timing-function:ease-out}
+56.9%{transform:translateY(-10px) rotate(225deg) scale(1.1);animation-timing-function:ease-in}63.75%,75%{transform:translateY(0) rotate(270deg) scale(1);animation-timing-function:ease-out}
+81.9%{transform:translateY(-10px) rotate(315deg) scale(1.1);animation-timing-function:ease-in}88.75%,100%{transform:translateY(0) rotate(360deg) scale(1)}}
+@keyframes stsh{
+0%{transform:scale(1) rotate(0);opacity:0;animation-timing-function:ease-out}6.9%{transform:scale(.6) rotate(45deg);opacity:.5;animation-timing-function:ease-in}13.75%,25%{transform:scale(1) rotate(90deg);opacity:0;animation-timing-function:ease-out}
+31.9%{transform:scale(.6) rotate(135deg);opacity:.5;animation-timing-function:ease-in}38.75%,50%{transform:scale(1) rotate(180deg);opacity:0;animation-timing-function:ease-out}
+56.9%{transform:scale(.6) rotate(225deg);opacity:.5;animation-timing-function:ease-in}63.75%,75%{transform:scale(1) rotate(270deg);opacity:0;animation-timing-function:ease-out}
+81.9%{transform:scale(.6) rotate(315deg);opacity:.5;animation-timing-function:ease-in}88.75%,100%{transform:scale(1) rotate(360deg);opacity:0}}
+/* গাইড বার: শিরোনাম বড়; ডেস্কটপে গাইড বাটন বক্স (আইকন + লেখা) */
+.ln-ub{font-size:max(1.2rem,calc(var(--bar-h)*.31*var(--u)))}
+@container (min-width:601px){
+  .ln-gd{align-self:center;height:calc(var(--bar-h)*.58*var(--u));min-width:calc(var(--bar-h)*1.44*var(--u));margin-right:calc(var(--bar-h)*.17*var(--u));padding:0 calc(var(--bar-h)*.15*var(--u));gap:calc(var(--bar-h)*.14*var(--u));border:max(2px,calc(var(--bar-h)*.025*var(--u))) solid var(--d);border-left-width:max(2px,calc(var(--bar-h)*.025*var(--u)));border-radius:calc(var(--bar-h)*.17*var(--u));box-shadow:0 calc(var(--bar-h)*.03*var(--u)) 0 var(--d);font-size:max(1.05rem,calc(var(--bar-h)*.19*var(--u)))}
+  .ln-gd svg{width:calc(var(--bar-h)*.3*var(--u));height:calc(var(--bar-h)*.3*var(--u))}
+  .ln-gd:active{transform:translateY(2px);box-shadow:0 1px 0 var(--d);background:none}
+}
+/* নেভিগেশন: ফোনে নিচে ট্যাব, ট্যাবলেটে আইকন-পাশ, ডেস্কটপে পাশের মেনু */
+.nv{position:absolute;z-index:80;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-around;height:calc(4rem + env(safe-area-inset-bottom,0px));padding:0 .4rem env(safe-area-inset-bottom,0px);background:var(--bg);border-top:2px solid var(--line)}
+.nv-lg{display:none}
+.nv-i{display:flex;align-items:center;gap:1.5rem;width:3.7rem;height:3.2rem;justify-content:center;padding:0;border:2px solid transparent;border-radius:1rem;background:none;color:var(--soft);font:inherit;font-weight:700;font-size:1.3rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.nv-i svg{width:1.9rem;height:1.9rem;flex:none}
+.nv-i span{display:none}
+.nv-i.on{border-color:#3f85a7;background:var(--field);color:var(--blue)}
+.nv-i:not(.on):active{background:var(--field)}
+.ln-scroll{position:absolute;top:0;left:0;right:0;bottom:calc(4rem + env(safe-area-inset-bottom,0px));height:auto}
+@media (min-width:44em){
+  .nv{top:0;right:auto;bottom:0;width:5.6rem;height:auto;flex-direction:column;justify-content:flex-start;gap:.6rem;padding:1.6rem 0;border-top:0;border-right:2px solid var(--line)}
+  .nv-i{width:3.9rem;height:3.5rem}
+  .ln-scroll{left:5.6rem;bottom:0}
+}
+@media (min-width:62.5em){
+  .nv{width:17.5rem;align-items:stretch;gap:.55rem;padding:1.6rem 1rem}
+  .nv-lg{display:flex;align-items:center;padding:.4rem 1.2rem 2rem;color:var(--blue)}
+  .nv-lg .wm{width:8.9rem;height:auto}
+  .nv-i{width:auto;height:3.5rem;justify-content:flex-start;padding:0 1.2rem;border-radius:1.1rem}
+  .nv-i svg{width:1.95rem;height:1.95rem}
+  .nv-i span{display:block;letter-spacing:.02em}
+  .ln-scroll{left:17.5rem}
+}
+@media (min-width:80em){.ln-scroll{padding-right:28.8rem}}
+.ln-wrap{max-width:43.9rem}
+
+/* ধাপ ৫৮: উপরের সারি (বই · কয়েন · জেম · হার্ট) */
+.ln-st{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+.st-i{display:flex;align-items:center;gap:.55rem;font-weight:800;font-size:1.45rem;line-height:1}
+.st-i svg{width:2.5rem;height:2.5rem;flex:none;filter:drop-shadow(0 0 .45rem rgba(255,255,255,.06))}
+.st-bk svg{width:3rem;height:2.25rem}
+.st-co b{color:#ffc800}.st-gm b{color:#49c0f8}.st-hr b{color:#ff5a5a}
+.st-co svg{filter:drop-shadow(0 0 .5rem rgba(255,200,0,.25))}.st-gm svg{filter:drop-shadow(0 0 .5rem rgba(73,192,248,.3))}.st-hr svg{filter:drop-shadow(0 0 .5rem rgba(255,75,75,.28))}
+.ln-st.in{height:3.2rem;margin:.1rem 0 .55rem;padding:0 .3rem}
+.ln-st.rc{display:none}
+.ln-uw{padding-top:calc(6*var(--u))}
+@media (min-width:80em){
+  .ln-st.in{display:none}
+  .ln-st.rc{display:flex;position:absolute;z-index:70;top:1.7rem;width:410px;right:calc((100% - 17.5rem - 1112px)/2);padding:0 .8rem;box-sizing:border-box}
+  .ln-uw{padding-top:calc(var(--bar-pt)*var(--u))}
+}
+
+/* ধাপ ৫৯: মাপ ছবির (ফোন ৩৪৬ পিক্সেল, ডেস্কটপ ১৮৯৪ পিক্সেল) অনুপাতে — ফোনে ১ ছবি-পিক্সেল = ১.২৬৯ ইউনিট; ডেস্কটপে ১ ছবি-পিক্সেল = ০.৭৪২ পিক্সেল */
+.ln-uw{padding-top:calc(7*var(--u))}
+.ln-st.in{height:calc(57*var(--u));margin:0 calc(-1*var(--bm)*var(--u)) calc(4.5*var(--u));padding:0 calc(10*var(--u)) 0 calc(11.4*var(--u))}
+.ln-st .st-i{gap:calc(8*var(--u));font-size:calc(19*var(--u));font-weight:800;letter-spacing:0}
+.ln-st .st-i svg{width:calc(34*var(--u));height:calc(34*var(--u));filter:none}
+.ln-st .st-bk svg{width:calc(34*var(--u));height:calc(34*var(--u))}
+.st-co svg,.st-gm svg,.st-hr svg{filter:none}
+.st-co b{color:#ffc800}.st-gm b{color:#49c0f8}.st-hr b{color:#ff3b3b}
+@media (max-width:43.99em){
+  .nv{--nu:calc(100vw / 346);height:calc(64*var(--nu) + env(safe-area-inset-bottom,0px));align-items:flex-start;padding:calc(14*var(--nu)) 0 env(safe-area-inset-bottom,0px);border-top-width:2px}
+  .nv-i{width:calc(42*var(--nu));height:calc(41*var(--nu));border-radius:calc(11*var(--nu))}
+  .nv-i svg{width:calc(31*var(--nu));height:calc(31*var(--nu))}
+  .nv-i[data-nv="more"]{display:none}
+  .ln-scroll{bottom:calc(64*100vw/346 + env(safe-area-inset-bottom,0px))}
+}
+@media (min-width:62.5em){
+  .nv{width:17.2rem;padding:1.9rem .82rem 1.6rem;gap:.56rem}
+  .nv-lg{padding:0 1.1rem 1.35rem}
+  .nv-lg .wm{width:8.9rem}
+  .nv-i{height:3.56rem;padding:0 1.1rem;gap:1.45rem;border-radius:1rem}
+  .nv-i svg{width:2.06rem;height:2.06rem}
+  .nv-i span{font-size:1.15rem}
+  .ln-scroll{left:17.2rem}
+}
+@media (min-width:80em){
+  .ln-uw{padding-top:calc(55*var(--u))}
+  .ln-scroll{padding-right:28.8rem}
+  .ln-st.rc{top:1.9rem;height:1.95rem;width:410px;right:calc((100% - 17.2rem - 1108px)/2);left:auto;padding:0 15px}
+  .ln-st.rc .st-i{gap:.5rem;font-size:.96rem}
+  .ln-st.rc .st-i svg{width:1.95rem;height:1.95rem}
+  .ln-st.rc .st-bk svg{width:1.95rem;height:1.95rem}
+}
+
+/* ধাপ ৬০: চেস্ট */
+.ln-ch{position:absolute;left:50%;top:50%;width:calc(var(--bt)*1.2*var(--u));height:calc(var(--bt)*1.08*var(--u));padding:0;border:0;background:none;cursor:pointer;transform:translate(calc(-50% + var(--cdx,0px)),-50%);z-index:2;-webkit-tap-highlight-color:transparent}
+.ln-ch svg{width:100%;height:100%;display:block;overflow:visible;transition:transform .08s}
+.ln-ch:active svg{transform:translateY(calc(3*var(--u)))}
+.ln-ch.dn{cursor:default}.ln-ch.dn:active svg{transform:none}
+.ln-ch.rd svg{animation:chw 3.2s ease-in-out infinite;transform-origin:50% 90%}
+.ln-ch.op svg{animation:chp .5s ease-out}
+@keyframes chw{0%,84%,100%{transform:rotate(0)}88%{transform:rotate(-4deg)}92%{transform:rotate(4deg)}96%{transform:rotate(-2deg)}}
+@keyframes chp{0%{transform:scale(1)}35%{transform:scale(1.18)}100%{transform:scale(1)}}
+.ln-cb{position:absolute;right:calc(-8*var(--u));top:calc(-10*var(--u));display:flex;align-items:center;gap:calc(3*var(--u));height:calc(28*var(--u));padding:0 calc(9*var(--u)) 0 calc(4*var(--u));border-radius:calc(14*var(--u));background:var(--field);border:2px solid #1cb0f6;font-size:calc(16*var(--u));font-weight:800;color:#49c0f8;line-height:1}
+.ln-cb svg{width:calc(21*var(--u));height:calc(21*var(--u))}
+.ln-gf{position:absolute;left:50%;top:15%;display:flex;align-items:center;gap:calc(4*var(--u));font-size:calc(26*var(--u));font-weight:800;color:#49c0f8;pointer-events:none;z-index:6;animation:gfl 1.4s ease-out forwards;translate:var(--cdx,0px) 0}
+.ln-gf svg{width:calc(28*var(--u));height:calc(28*var(--u))}
+@keyframes gfl{0%{opacity:0;transform:translate(-50%,0)}15%{opacity:1}100%{opacity:0;transform:translate(-50%,calc(-80*var(--u)))}}
+
+/* ধাপ ৬১: তারা — প্রতি লাফে ১৮০° ঘূর্ণি, আরও মসৃণ (উঠা ও নামা প্যারাবোলার মতো, ঘূর্ণি ইজ-ইন-আউট, মাটিতে থামা) */
+.st-hr b{color:#f5222d}
+.stj,.stsh{animation-duration:7.6s;animation-timing-function:linear}
+.stj .rt,.stsh .rt{animation:strt 7.6s infinite}
+.ln-nd:not(.lock):hover .rt,.ln-nd:not(.lock):active .rt{animation:none}
+@keyframes stj{
+0%,25%,50%,75%{transform:translateY(0) scale(1);animation-timing-function:cubic-bezier(.25,.46,.45,.94)}
+7.5%,32.5%,57.5%,82.5%{transform:translateY(-10px) scale(1.1);animation-timing-function:cubic-bezier(.55,.09,.68,.53)}
+15%,40%,65%,90%,100%{transform:translateY(0) scale(1)}}
+@keyframes stsh{
+0%,25%,50%,75%{transform:scale(1);opacity:0;animation-timing-function:cubic-bezier(.25,.46,.45,.94)}
+7.5%,32.5%,57.5%,82.5%{transform:scale(.6);opacity:.5;animation-timing-function:cubic-bezier(.55,.09,.68,.53)}
+15%,40%,65%,90%,100%{transform:scale(1);opacity:0}}
+@keyframes strt{
+0%{transform:rotate(0);animation-timing-function:cubic-bezier(.45,.05,.55,.95)}
+15%,25%{transform:rotate(180deg);animation-timing-function:cubic-bezier(.45,.05,.55,.95)}
+40%,50%{transform:rotate(360deg);animation-timing-function:cubic-bezier(.45,.05,.55,.95)}
+65%,75%{transform:rotate(540deg);animation-timing-function:cubic-bezier(.45,.05,.55,.95)}
+90%,100%{transform:rotate(720deg)}}
+/* step 66: প্রোফাইল নেভ আইকন — ছায়া-মানুষ / নিজের অ্যাভাটার */
+.nv-av{font-style:normal;--w:1.9rem;position:relative;display:flex;align-items:center;justify-content:center;width:var(--w);height:var(--w);border-radius:50%;overflow:hidden;flex:none;font-size:calc(var(--w)*.58);line-height:1}
+.nv-av b{position:relative;font-weight:800}
+.nv-av .pf-pt{position:absolute;inset:0;width:100%;height:100%;opacity:.17;pointer-events:none}
+@media (min-width:62.5em){.nv-av{--w:1.95rem}}
+@media (max-width:43.99em){.nv-av{--w:calc(31*var(--nu))}}
+.nv-i.on .nv-av{box-shadow:0 0 0 2px var(--blue)}
+/* step 67: ln পাতা বদলে নেভিগেশন ও কয়েন-সারি স্থির, শুধু নতুন অংশ স্লাইড */
+.view.ln.pgc>:not(.nv):not(.ln-st):not(.ln-scroll),.view.ln.pgc>.ln-scroll>:not(.ln-st):not(.ln-wrap),.view.ln.pgc .ln-wrap>:not(.ln-uw),.view.ln.pgc .ln-uw>:not(.ln-st){animation:pgin .38s cubic-bezier(.25,.8,.3,1) .21s backwards}
+.view.ln.pgc>.ln-scroll{animation:none}
+
+/* লাইট মোড সংশোধন */
+:root[data-theme=light] .ln-sep span{color:#afafaf}
+:root[data-theme=light] .ln-ch.lk svg,:root[data-theme=light] .ch-cd.lk .ch-im svg,:root[data-theme=light] .ch-nx .ch-im svg{filter:brightness(1.6) saturate(.7) contrast(.9)}
+/* ধাপ ৮৪: ln পাতায় ভর্তির পুরনো 'enter' ওঠানামা বন্ধ (এটাই নেভ/কয়েন-সারি ১০px নড়াত); শুধু পাতা বদলের অ্যানিমেশন থাকে */
+.view.ln.pg{animation:pgin .38s cubic-bezier(.25,.8,.3,1) .21s backwards}
+.view.ln.pg-out{animation:pgout .2s cubic-bezier(.4,0,.8,.7) forwards}
+@media (prefers-reduced-motion:reduce){.view.ln.pg,.view.ln.pg-out{animation:none}}

@@ -1,0 +1,53 @@
+/* চেস্ট পাতা */
+.ln-scroll.ch{padding:0}
+.ch-wrap{margin:0 auto;padding:0 4vw 3rem;max-width:46rem}
+.ch-h1{display:none}
+.ch-rc{display:none}
+.ch-nr{display:grid;gap:.9rem;margin-top:1.6rem}
+.ch-bx{border:2px solid var(--line);border-radius:1.1rem;padding:1.1rem 1.2rem}
+.ch-bx h2{margin:0 0 .9rem;font-size:1.25rem;font-weight:800;color:var(--text)}
+.ch-sg{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.ch-sm{display:grid;justify-items:center;gap:.15rem;padding:.7rem .2rem;border-radius:.8rem;background:color-mix(in srgb,var(--line) 35%,transparent)}
+.ch-sm b{font-size:1.7rem;font-weight:800;color:var(--text)}
+.ch-sm span{font-size:.8rem;font-weight:700;color:#7b8d97;text-align:center}
+.ch-gt{display:flex;align-items:center;justify-content:space-between;margin-top:1rem;font-weight:700;color:#9fb0ba}
+.ch-g{display:inline-flex;align-items:center;gap:.3rem;color:#49c0f8;font-weight:800}
+.ch-g svg{width:1.4rem;height:1.4rem}.ch-g i{font-style:normal}
+.ch-nx{display:grid;justify-items:center;gap:.5rem;text-align:center}
+.ch-nx .ch-pb{width:100%}
+.ch-nx b{font-size:1.05rem;font-weight:800;color:var(--text)}
+.ch-gd{display:grid;grid-template-columns:repeat(2,1fr);gap:1.8rem .9rem;margin-top:1.4rem}
+.ch-cd{display:grid;gap:.6rem;align-content:start}
+.ch-im{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:275/150;padding:0}
+.ch-im svg{height:100%;width:auto;max-width:100%;display:block}
+.ch-im.sm{aspect-ratio:auto;width:7rem;height:5.6rem;border:0;background:none;padding:0}
+.ch-cd.rd .ch-im svg{animation:chw 3.2s ease-in-out infinite;transform-origin:50% 90%}
+.ch-cb{position:absolute;right:.5rem;top:.5rem;display:flex;align-items:center;gap:.25rem;height:1.8rem;padding:0 .6rem 0 .3rem;border-radius:1rem;background:var(--field);border:2px solid var(--line);color:#49c0f8;font-weight:800;font-size:.95rem}
+.ch-cb svg{width:1.3rem;height:1.3rem}.ch-cb b{font-weight:800}
+.ch-dt{display:grid;gap:.35rem;padding:.2rem .3rem;text-align:center}
+.ch-dt b{font-size:1rem;font-weight:800;color:var(--text);line-height:1.25}
+.ch-sb{font-size:.85rem;font-weight:700;color:#7b8d97}
+.ch-pb{height:.7rem;border-radius:.4rem;background:var(--line);overflow:hidden}
+.ch-pb i{display:block;height:100%;background:var(--blue);border-radius:.4rem}
+.ch-pt{font-size:.82rem;color:#7b8d97;font-weight:700}
+.ch-st{font-size:.85rem;font-weight:800;color:#d9a000;text-transform:uppercase}
+.ch-bt{width:100%;height:2.7rem;padding:0}
+@media (min-width:44em){.ch-wrap .se-top{height:3.6rem;margin-bottom:1rem}.ch-wrap .se-top h1{font-size:1.25rem}.ch-wrap{padding:2rem 1.5rem 3rem}.ch-gd{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:80em){
+  .ch-wrap .se-top{display:none}
+  .ln-scroll.ch{padding-right:24.5rem}
+  .ch-wrap{max-width:48rem}
+  .ch-h1{display:block;margin:0 0 1.4rem;font-size:1.9rem;font-weight:800;text-align:center;color:var(--text)}
+  .ch-nr{display:none}
+  .ch-gd{margin-top:0;gap:2.4rem 1.2rem}
+  .ch-rc{display:grid;gap:1.4rem;align-content:start;position:absolute;z-index:3;top:5.2rem;width:410px;right:calc((100% - 17.2rem - 1108px)/2)}
+}
+@keyframes chw{0%,60%,100%{transform:rotate(0)}68%{transform:rotate(-4deg)}76%{transform:rotate(4deg)}84%{transform:rotate(-3deg)}92%{transform:rotate(2deg)}}
+/* "অন্যান্য" মেনু */
+#nv-mn{position:fixed;z-index:400;width:19rem;background:var(--bg);border:2px solid var(--line);border-radius:1rem;overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.45)}
+#nv-mn .mn-h{padding:1.15rem 1.4rem;border-bottom:2px solid var(--line);font-size:1.05rem;font-weight:800;letter-spacing:.06em;color:var(--blue)}
+#nv-mn button{display:block;width:100%;padding:.95rem 1.4rem;border:0;background:none;color:var(--text);font:inherit;font-size:1.05rem;font-weight:800;text-align:left;cursor:pointer}
+#nv-mn button:hover{background:color-mix(in srgb,var(--line) 40%,transparent)}
+.nv-i[data-nv="more"][data-open]{background:color-mix(in srgb,var(--line) 45%,transparent)}
+#nv-ts{position:fixed;left:50%;bottom:2rem;translate:-50% 0;z-index:500;padding:.8rem 1.3rem;border-radius:.9rem;background:var(--field);border:2px solid var(--line);color:var(--text);font-weight:700}
+#nv-ts[hidden]{display:none}

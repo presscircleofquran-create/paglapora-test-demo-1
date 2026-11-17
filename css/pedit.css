@@ -1,0 +1,62 @@
+/* প্রোফাইল সাজানোর পাতা — মাপ ব্যবহারকারীর ছবির অনুপাতে (ফোন ৪৩২ চওড়া, ডেস্কটপ ১৫৮০/১৯০৪ চওড়া) */
+.ln-scroll.pe{padding:0}
+.pe-wrap{min-height:100%;display:flex;flex-direction:column}
+html[data-rtl] .pe-wrap .t{direction:rtl;unicode-bidi:isolate}
+.pe-hd{display:flex;align-items:center;justify-content:space-between;height:14.4vw;padding:0 4.3vw 0 6.5vw;position:relative}
+.pe-hd h1{position:absolute;left:0;right:0;margin:0;text-align:center;font-size:5.1vw;font-weight:800;color:#6b7c86;pointer-events:none}
+.pe-x{position:relative;z-index:1;width:9vw;height:9vw;padding:0;border:0;background:none;color:#8a9aa4;cursor:pointer}
+.pe-x svg{width:100%;height:100%;display:block}
+.pe-x .xd{display:none}
+.pe-dn{position:relative;z-index:1;border:0;background:none;padding:0 1vw;color:var(--blue);font-size:4.4vw;font-weight:800;cursor:pointer}
+.pe-card{border-top:2px solid var(--line)}
+.pe-pvw{container-type:inline-size}
+.pe-pv{border-radius:0;position:relative;display:flex;align-items:center;justify-content:center;height:51cqw;overflow:hidden;transition:background .15s}
+.pe-pv .pf-lt{font-size:calc(36cqw*var(--sz,1))}
+.pe-pn{border-top:2px solid var(--line)}
+.pe-tabs{display:flex;gap:2.2vw;padding:0 4vw;height:16.7vw;border-bottom:2px solid var(--line)}
+.pe-tb{position:relative;width:12vw;padding:0;border:0;background:none;color:#7b8d97;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.pe-tb svg{width:8.2vw;height:8.2vw}
+.pe-tb.on{color:var(--blue)}
+.pe-tb.on::after{content:"";position:absolute;left:1.5vw;right:1.5vw;bottom:-2px;height:2px;background:var(--blue)}
+.pe-bd{padding:5.5vw 10vw 8vw}
+.pe-bd h2{margin:0 0 5vw;font-size:5.1vw;font-weight:800;color:var(--text)}
+.pe-in{width:100%;height:13vw;margin-bottom:5vw;border-radius:3.3vw;background:var(--field);border:2px solid var(--line);color:var(--text);font-size:6vw;font-weight:800;text-align:center;outline:0;font-family:inherit}
+.pe-in:focus{border-color:var(--blue)}
+.pe-grid{display:grid;grid-template-columns:repeat(4,1fr);column-gap:7.5vw;row-gap:4.2vw}
+.tl{aspect-ratio:1;width:100%;padding:0;border:2px solid var(--line);border-radius:3.3vw;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text);transition:border-color .1s,background .1s}
+.tl.on{border-color:var(--blue);background:rgba(73,192,248,.1);box-shadow:0 0 0 1px var(--blue)}
+.tl .sq{display:block;width:77%;height:77%;border-radius:22%;position:relative;overflow:hidden;color:#fff}
+.tl .sq.au{display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.14)}
+.tl .sq.au b{font-size:1.4rem;font-weight:800;color:#fff}
+.tl .sq.no{border:2px dashed rgba(255,255,255,.35)}
+.tl .sq.pp .pf-pt{opacity:.45}
+.tl .lt{font-weight:800;font-size:1.6rem;line-height:1}
+.pe-ft{display:none}
+@media (min-width:44em){
+  .pe-wrap{width:min(68rem,100% - 2*clamp(1.5rem,10%,10rem));margin:0 auto;padding:1.4rem 0 3rem}
+  .pe-hd{height:auto;padding:0;justify-content:flex-start;gap:1rem;margin-bottom:1.5rem}
+  .pe-hd h1{position:static;text-align:left;font-size:1.4rem}
+  .pe-x{width:2rem;height:2rem}
+  .pe-x .xm{display:none}.pe-x .xd{display:block}
+  .pe-dn{display:none}
+  .pe-card{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--line);border-radius:1.1rem;overflow:hidden;min-height:23.9rem}
+  .pe-pvw{border-right:2px solid var(--line);display:flex}
+  .pe-pv{height:100%;width:100%;min-height:23.9rem;border-radius:0}
+  .pe-pv .pf-lt{font-size:calc(42cqw*var(--sz,1))}
+  .pe-pn{border-top:0;min-width:0}
+  .pe-tabs{gap:.4rem;padding:0 1rem;height:4.3rem}
+  .pe-tb{width:3.2rem}
+  .pe-tb svg{width:2.25rem;height:2.25rem}
+  .pe-tb.on::after{left:.3rem;right:.3rem}
+  .pe-bd{padding:1.6rem 1.8rem 1.8rem}
+  .pe-bd h2{font-size:1.15rem;margin-bottom:1.1rem}
+  .pe-in{height:3.4rem;border-radius:.9rem;font-size:1.6rem;margin-bottom:1.2rem}
+  .pe-grid{grid-template-columns:repeat(6,1fr);column-gap:1.3rem;row-gap:1.1rem}
+  .tl{border-radius:.8rem}
+  .pe-ft{display:flex;justify-content:flex-end;margin-top:2.4rem}
+  .pe-ft .btn{width:9.2rem;height:3.25rem}
+}
+@media (max-width:62.49em){
+  #v-pedit .nv{display:none}
+  #v-pedit .ln-scroll.pe{left:0;bottom:0}
+}
